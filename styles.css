@@ -4,7 +4,7 @@ img {
 body {
     text-align: center;
     font-family: "comic sans ms";
-    color: rgb(255, 0 , 0);
+    color: rgb(255,  255, 255);
     background-image:url(https://upload.wikimedia.org/wikipedia/en/c/cf/Wario-mario_party_8.png);
-    background-color: yellow;
+    background-color: green;
 }
