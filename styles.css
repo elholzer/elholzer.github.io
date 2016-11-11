@@ -4,7 +4,8 @@ img {
 body {
     text-align: center;
     font-family: "comic sans ms";
-    color: rgb(0, 255, 125);
+    font-size: xx-large;
+    color: rgb(200, 50, 50);
     background-image: url(http://files.gamebanana.com/img/ico/sprays/deedeedee_run2.gif);
-    background-color: rgb(200, 100, 100);
+    background-color: rgb(100, 100, 100);
 }
