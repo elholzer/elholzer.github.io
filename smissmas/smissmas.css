@@ -1,0 +1,11 @@
+img{
+    width:200px;
+}
+ body{
+        text-align:center;
+        font-family:"comic sans ms";
+        font-size:xx-large;
+        color:rgb(200, 0, 0);
+        background-image: url(http://vignette2.wikia.nocookie.net/degrassi/images/2/26/Snow.gif/revision/latest?cb=20111219145542);
+        background-color:rgb(255,255,255);
+ }
