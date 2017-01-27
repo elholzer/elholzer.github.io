@@ -2,10 +2,9 @@
     width:300px;
     height:300px;
     border-radius:150px;
-    border-color:black;
-    background-color:red;
+    border-color:rgb(50, 50, 50);
+    background-color:rgb(210, 50, 50);
     font-family: "comic sans ms";
-    font-size:50px;
-    color:white;
-    
-}
+    font-size:75px;
+    color:rgb(225, 225, 225);
+    }
