@@ -10,6 +10,7 @@ var donkeyKong = new Audio("donkey_kong.mp3");
 donkeyKong.play();
 }
 $("#donkey").on("click", sayDonkeyKong);
+
 //HUH
 function sayTinyKong(){
     var tinyKong = new Audio("tiny_kong.mp3");
@@ -35,3 +36,8 @@ function sayChunkyKong(){
 }
 $("#chunky").on("click", sayChunkyKong);
 //COME ON CRANKY TAKE IT TO THE FRIDGE
+function sayHuh(){
+    var huh = new Audio("HUH.mp3");
+    huh.play();
+}
+$("#huh").on("click", sayHuh);
