@@ -70,6 +70,7 @@ function draw() {
 function gameOver() {
   background(0);
   textAlign(CENTER);
+  score=0;
   fill("white");
   text("you got torbjorn killed", width/2, height/3);
   //text("robots avoided by the tiny man: "+score, width/2, height/2);
