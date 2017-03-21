@@ -68,7 +68,7 @@ function draw() {
     
   if(score>-1){
     fill("black");
-    text("robots dodged: "+ score, width-100, 25);
+    text("robots dodged: "+ score, width-150, 25);
   }
   }
 function gameOver() {
