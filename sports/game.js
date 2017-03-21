@@ -7,11 +7,13 @@ var enemyImage;
 var enemy2Image;
 var enemy3Image;
 var isGameOver;
+var backgroundImage;
 function preload(){
   playerImage = loadImage("torbjorn2.png")
   enemyImage = loadImage("bastion.png")
   enemy2Image = loadImage("zenyatta.png");
   enemy3Image = loadImage("orisa.png")
+  backgroundImage = loadImage("https://i.kinja-img.com/gawker-media/image/upload/t_original/dtftgbyvrmcxqwrnid76.jpg")
 }
 function setup() {
   createCanvas(500,500);
@@ -27,7 +29,7 @@ function setup() {
 }
 
 function draw() {
-  background(0, 0, 100);
+  background(backgroundImage);
   drawSprites()
   if (keyDown(RIGHT_ARROW)&&player.position.x<width-25){
   player.position.x = player.position.x+2;}
