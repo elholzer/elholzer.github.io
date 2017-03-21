@@ -61,6 +61,10 @@ function draw() {
   }else{
     if (enemy.overlap(player))
     isGameOver= true;
+    if (enemy2.overlap(player))
+    isGameOver= true;
+    if (enemy3.overlap(player))
+    isGameOver= true;
     
   if(score>-1){
     fill("black");
