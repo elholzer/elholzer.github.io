@@ -62,6 +62,7 @@ function gameOver() {
   text("you got torbjorn killed", width/2, height/2);
   text("click to restart, dingus", width/2, 3*height/4);
 }
+}
 function mouseClicked(){
   if(isGameOver){
     isGameOver = false;
@@ -74,7 +75,6 @@ function mouseClicked(){
     enemy3.position.x = width/3;
     enemy3.position.y = 0;
   }
-}
   // if(enemy.overlap(player)){
   //  gameOver();
   //}
