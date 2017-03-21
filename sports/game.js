@@ -8,6 +8,7 @@ var enemy2Image;
 var enemy3Image;
 var isGameOver;
 var backgroundImage;
+var score;
 function preload(){
   playerImage = loadImage("torbjorn2.png")
   enemyImage = loadImage("bastion.png")
@@ -26,6 +27,7 @@ function setup() {
   enemy3=createSprite(width/1.5, 0, 10, 30);
   enemy3.addImage(enemy3Image);
   isGameOver=false;
+  score = 0;
 }
 
 function draw() {
@@ -42,27 +44,37 @@ function draw() {
  if (enemy.position.y > height) {
    enemy.position.y = 0;
    enemy.position.x = random(5, width-5);
+   score = (score+1);
  }
    if (enemy2.position.y > height) {
    enemy2.position.y = 0;
    enemy2.position.x = random(5, width-5);
+   score = (score+1);
  }
  if (enemy3.position.y > height) {
    enemy3.position.y = 0;
    enemy3.position.x = random(5, width-5);
+   score = (score+1);
  }
   if (isGameOver){
     gameOver();
   }else{
     if (enemy.overlap(player))
     isGameOver= true;
+    
+  if(score>-1){
+    fill("black");
+    text("robots dodged: "+ score, width-100, 25);
+  }
   }
 function gameOver() {
   background(0);
   textAlign(CENTER);
   fill("white");
-  text("you got torbjorn killed", width/2, height/2);
+  text("you got torbjorn killed", width/2, height/3);
+  //text("robots avoided by the tiny man: "+score, width/2, height/2);
   text("click to restart, dingus", width/2, 3*height/4);
+  
 }
 }
 function mouseClicked(){
