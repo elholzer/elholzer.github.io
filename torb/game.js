@@ -70,14 +70,67 @@ function draw() {
     fill("black");
     text("robots dodged: "+ score, width-150, 25);
   }
+  if (score>10){
+  enemy.position.y = enemy.position.y + 5.1;
+  enemy2.position.y = enemy2.position.y +6.1;
+  enemy3.position.y = enemy3.position.y + 4.1;
+   if (keyDown(RIGHT_ARROW)&&player.position.x<width-25){
+  player.position.x = player.position.x+2.2;}
+  if (keyDown(LEFT_ARROW)&&player.position.x>25){
+    player.position.x = player.position.x-2.2;
+  }
+  }
+  if (score>20){
+  enemy.position.y = enemy.position.y + 5.25;
+  enemy2.position.y = enemy2.position.y +6.25;
+  enemy3.position.y = enemy3.position.y + 4.25;
+   if (keyDown(RIGHT_ARROW)&&player.position.x<width-25){
+  player.position.x = player.position.x+2.3;}
+  if (keyDown(LEFT_ARROW)&&player.position.x>25){
+    player.position.x = player.position.x-2.3;
+  }
+  }
+  if (score>30){
+  enemy.position.y = enemy.position.y + 5.5;
+  enemy2.position.y = enemy2.position.y +6.5;
+  enemy3.position.y = enemy3.position.y + 4.5;
+   if (keyDown(RIGHT_ARROW)&&player.position.x<width-25){
+  player.position.x = player.position.x+2.5;}
+  if (keyDown(LEFT_ARROW)&&player.position.x>25){
+    player.position.x = player.position.x-2.5;
+  }
+  }
+  if (score>40){
+  enemy.position.y = enemy.position.y + 5.75;
+  enemy2.position.y = enemy2.position.y +6.75;
+  enemy3.position.y = enemy3.position.y + 4.75;
+   if (keyDown(RIGHT_ARROW)&&player.position.x<width-25){
+  player.position.x = player.position.x+2.8;}
+  if (keyDown(LEFT_ARROW)&&player.position.x>25){
+    player.position.x = player.position.x-2.8;
+  }
+  }
+  if (score>50){
+  enemy.position.y = enemy.position.y + 6;
+  enemy2.position.y = enemy2.position.y +7;
+  enemy3.position.y = enemy3.position.y + 5;
+   if (keyDown(RIGHT_ARROW)&&player.position.x<width-25){
+  player.position.x = player.position.x+3;}
+  if (keyDown(LEFT_ARROW)&&player.position.x>25){
+    player.position.x = player.position.x-3;
+  }
+  }
+  
   }
 function gameOver() {
   background(0);
   textAlign(CENTER);
-  score=0;
+  enemy.position.y = 0;
+  enemy2.position.y=0;
+  enemy3.position.y=0;
   fill("white");
   text("you got torbjorn killed", width/2, height/3);
-  //text("robots avoided by the tiny man: "+score, width/2, height/2);
+  text("robots avoided by the tiny man: "+score, width/2, height/2);
   text("click to restart, dingus", width/2, 3*height/4);
   
 }
@@ -86,13 +139,14 @@ function mouseClicked(){
   if(isGameOver){
     isGameOver = false;
     player.position.x = width/2;
-    player.position.y = height-25;
+    player.position.y = height-31;
     enemy.position.x = width/2;
     enemy.position.y = 0;
     enemy2.position.x = width/3;
     enemy2.position.y = 0;
     enemy3.position.x = width/3;
     enemy3.position.y = 0;
+    score=0;
   }
   // if(enemy.overlap(player)){
   //  gameOver();
