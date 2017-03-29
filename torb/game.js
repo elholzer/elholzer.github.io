@@ -17,7 +17,7 @@ function preload(){
   backgroundImage = loadImage("https://i.kinja-img.com/gawker-media/image/upload/t_original/dtftgbyvrmcxqwrnid76.jpg")
 }
 function setup() {
-  createCanvas(500,500);
+  createCanvas(1000,500);
   player=createSprite(250, 470, 50, 50);
   player.addImage(playerImage);
   enemy=createSprite(width/2, 0, 10, 30);
@@ -34,13 +34,13 @@ function draw() {
   background(backgroundImage);
   drawSprites()
   if (keyDown(RIGHT_ARROW)&&player.position.x<width-25){
-  player.position.x = player.position.x+2;}
+  player.position.x = player.position.x+(2+score/100);}
   if (keyDown(LEFT_ARROW)&&player.position.x>25){
-    player.position.x = player.position.x-2;
+    player.position.x = player.position.x-(2+score/100);
   }
- enemy.position.y = enemy.position.y + 5;
- enemy2.position.y = enemy2.position.y +6;
- enemy3.position.y = enemy3.position.y + 4;
+ enemy.position.y = enemy.position.y + (5+score/100);
+ enemy2.position.y = enemy2.position.y +(6+score/100);
+ enemy3.position.y = enemy3.position.y + (4+score/100);
  if (enemy.position.y > height) {
    enemy.position.y = 0;
    enemy.position.x = random(5, width-5);
@@ -70,10 +70,10 @@ function draw() {
     fill("black");
     text("robots dodged: "+ score, width-150, 25);
   }
-  if (score>10){
-  enemy.position.y = enemy.position.y + 5.1;
-  enemy2.position.y = enemy2.position.y +6.1;
-  enemy3.position.y = enemy3.position.y + 4.1;
+  /*if (score>10){
+  enemy.position.y = enemy.position.y + 5.01;
+  enemy2.position.y = enemy2.position.y +6.01;
+  enemy3.position.y = enemy3.position.y + 4.01;
    if (keyDown(RIGHT_ARROW)&&player.position.x<width-25){
   player.position.x = player.position.x+2.2;}
   if (keyDown(LEFT_ARROW)&&player.position.x>25){
@@ -81,9 +81,9 @@ function draw() {
   }
   }
   if (score>20){
-  enemy.position.y = enemy.position.y + 5.25;
-  enemy2.position.y = enemy2.position.y +6.25;
-  enemy3.position.y = enemy3.position.y + 4.25;
+  enemy.position.y = enemy.position.y + 5.025;
+  enemy2.position.y = enemy2.position.y +6.025;
+  enemy3.position.y = enemy3.position.y + 4.025;
    if (keyDown(RIGHT_ARROW)&&player.position.x<width-25){
   player.position.x = player.position.x+2.3;}
   if (keyDown(LEFT_ARROW)&&player.position.x>25){
@@ -91,9 +91,9 @@ function draw() {
   }
   }
   if (score>30){
-  enemy.position.y = enemy.position.y + 5.5;
-  enemy2.position.y = enemy2.position.y +6.5;
-  enemy3.position.y = enemy3.position.y + 4.5;
+  enemy.position.y = enemy.position.y + 5.05;
+  enemy2.position.y = enemy2.position.y +6.05;
+  enemy3.position.y = enemy3.position.y + 4.05;
    if (keyDown(RIGHT_ARROW)&&player.position.x<width-25){
   player.position.x = player.position.x+2.5;}
   if (keyDown(LEFT_ARROW)&&player.position.x>25){
@@ -101,9 +101,9 @@ function draw() {
   }
   }
   if (score>40){
-  enemy.position.y = enemy.position.y + 5.75;
-  enemy2.position.y = enemy2.position.y +6.75;
-  enemy3.position.y = enemy3.position.y + 4.75;
+  enemy.position.y = enemy.position.y + 5.075;
+  enemy2.position.y = enemy2.position.y +6.075;
+  enemy3.position.y = enemy3.position.y + 4.075;
    if (keyDown(RIGHT_ARROW)&&player.position.x<width-25){
   player.position.x = player.position.x+2.8;}
   if (keyDown(LEFT_ARROW)&&player.position.x>25){
@@ -111,15 +111,16 @@ function draw() {
   }
   }
   if (score>50){
-  enemy.position.y = enemy.position.y + 6;
-  enemy2.position.y = enemy2.position.y +7;
-  enemy3.position.y = enemy3.position.y + 5;
+  enemy.position.y = enemy.position.y + 5.1;
+  enemy2.position.y = enemy2.position.y +6.1;
+  enemy3.position.y = enemy3.position.y + 4.1;
    if (keyDown(RIGHT_ARROW)&&player.position.x<width-25){
   player.position.x = player.position.x+3;}
   if (keyDown(LEFT_ARROW)&&player.position.x>25){
     player.position.x = player.position.x-3;
   }
-  }
+  }*/
+  
   
   }
 function gameOver() {
