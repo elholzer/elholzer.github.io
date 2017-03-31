@@ -1,5 +1,6 @@
 var player;
-var playerImage;
+var playerImageleft;
+var playerImageright;
 var enemy;
 var enemy2;
 var enemy3;
@@ -10,7 +11,8 @@ var isGameOver;
 var backgroundImage;
 var score;
 function preload(){
-  playerImage = loadImage("torbjorn2.png")
+  playerImageleft = loadImage("torbjorn2.png")
+  playerImageright = loadImage("torbjorn3.png")
   enemyImage = loadImage("bastion.png")
   enemy2Image = loadImage("zenyatta.png");
   enemy3Image = loadImage("orisa.png")
@@ -19,7 +21,7 @@ function preload(){
 function setup() {
   createCanvas(1000,500);
   player=createSprite(250, 470, 50, 50);
-  player.addImage(playerImage);
+  player.addImage(playerImageleft);
   enemy=createSprite(width/2, 0, 10, 30);
   enemy.addImage(enemyImage);
   enemy2=createSprite(width/3, 0, 10, 30);
@@ -34,9 +36,12 @@ function draw() {
   background(backgroundImage);
   drawSprites()
   if (keyDown(RIGHT_ARROW)&&player.position.x<width-25){
-  player.position.x = player.position.x+(2+score/100);}
+  player.position.x = player.position.x+(2+score/100);
+  player.addImage(playerImageright);
+  }
   if (keyDown(LEFT_ARROW)&&player.position.x>25){
     player.position.x = player.position.x-(2+score/100);
+    player.addImage(playerImageleft);
   }
  enemy.position.y = enemy.position.y + (5+score/100);
  enemy2.position.y = enemy2.position.y +(6+score/100);
