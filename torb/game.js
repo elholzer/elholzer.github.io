@@ -11,12 +11,12 @@ var isGameOver;
 var backgroundImage;
 var score;
 function preload(){
-  playerImageleft = loadImage("torbjorn2.png")
-  playerImageright = loadImage("torbjorn3.png")
-  enemyImage = loadImage("torbjorn2.png")//("bastion.png")
-  enemy2Image = loadImage("torbjorn2.png") //("zenyatta.png");
-  enemy3Image = loadImage("torbjorn2.png")//("orisa.png")
-  backgroundImage = loadImage("torbjorn-gameplay.jpg")//("https://i.kinja-img.com/gawker-media/image/upload/t_original/dtftgbyvrmcxqwrnid76.jpg")
+  playerImageleft = loadImage("torbjorn2.png");
+  playerImageright = loadImage("torbjorn3.png");
+  enemyImage = loadImage("bastion.png");
+  enemy2Image = loadImage("zenyatta.png");
+  enemy3Image = loadImage("orisa.png");
+  backgroundImage = loadImage("https://i.kinja-img.com/gawker-media/image/upload/t_original/dtftgbyvrmcxqwrnid76.jpg");
 }
 function setup() {
   createCanvas(1000,500);
@@ -31,10 +31,9 @@ function setup() {
   isGameOver=false;
   score = 0;
 }
-
 function draw() {
   background(backgroundImage);
-  drawSprites()
+  drawSprites();
   if (keyDown(RIGHT_ARROW)&&player.position.x<width-25){
   player.position.x = player.position.x+(2+score/100);
   player.addImage(playerImageright);
@@ -65,15 +64,20 @@ function draw() {
     gameOver();
   }else{
     if (enemy.overlap(player))
+    {
     isGameOver= true;
+    }
     if (enemy2.overlap(player))
+    {
     isGameOver= true;
+    }
     if (enemy3.overlap(player))
+    {
     isGameOver= true;
-    
+    }
   if(score>-1){
     fill("black");
-    text("torbjorn: "+ score, width-150, 25);
+    text("robots dodged: "+ score, width-150, 25);
   }
   /*if (score>10){
   enemy.position.y = enemy.position.y + 5.01;
@@ -135,9 +139,9 @@ function gameOver() {
   enemy2.position.y=0;
   enemy3.position.y=0;
   fill("white");
-  text("torbjorn", width/2, height/3);
-  text("torbjorn: "+score, width/2, height/2);
-  text("click to torbjorn", width/2, 3*height/4);
+  text("you got torbjorn killed", width/2, height/3);
+  text("robots avoided by the tiny man: "+score, width/2, height/2);
+  text("click to restart, dingus", width/2, 3*height/4);
   
 }
 }
